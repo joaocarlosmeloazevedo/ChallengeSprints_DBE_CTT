@@ -26,7 +26,7 @@ public class Book {
 	@NotBlank(message = "Autor inválido. (O livro deve ter um autor)")
 	private String genero;
 	
-	@Size(message = "Valor inválida. (Mínimo de 2 caracteres)", min=1)
+	@Size(message = "Valor inválida. (Mínimo de 1 número)", min=1)
 	@Positive
 	private String valor;
 	

@@ -22,7 +22,7 @@ public class MainController {
 
 	@Autowired
 	private AccountRepository repository;
-	
+
 	@Autowired
 	private BookRepository repository2;
 
@@ -35,13 +35,28 @@ public class MainController {
 	public String list() {
 		return "list";
 	}
-	
+
 	@RequestMapping("/library")
 	public String library() {
 		return "library";
 	}
 
-	@GetMapping(value = { "", "/", "/home"})
+	@RequestMapping("/donation")
+	public String donationUser(Book book) {
+		return "donation";
+	}
+
+	@RequestMapping("/register")
+	public String register(Account account) {
+		return "register";
+	}
+
+	@RequestMapping("/bookregister")
+	public String bookregister(Book book) {
+		return "bookregister";
+	}
+
+	@GetMapping(value = { "", "/", "/home" })
 	public ModelAndView listagem() {
 		ModelAndView modelAndView = new ModelAndView("index");
 		List<Account> list = repository.findAll();
@@ -51,7 +66,15 @@ public class MainController {
 		modelAndView.addObject("book", list2);
 		return modelAndView;
 	}
-	
+
+	@GetMapping("/donation")
+	public ModelAndView donation() {
+		ModelAndView modelAndView = new ModelAndView("donation");
+		List<Book> list2 = repository2.findAll();
+		modelAndView.addObject("book", list2);
+		return modelAndView;
+	}
+
 	@GetMapping("/library")
 	public ModelAndView biblioteca() {
 		ModelAndView modelAndView = new ModelAndView("library");
@@ -59,7 +82,6 @@ public class MainController {
 		modelAndView.addObject("book", list2);
 		return modelAndView;
 	}
-	
 
 	@PostMapping("/list")
 	public String save(@Valid Account account, BindingResult result) {
@@ -69,23 +91,13 @@ public class MainController {
 		repository.save(account);
 		return "register";
 	}
-	
+
 	@PostMapping("/bookregister")
 	public String save(@Valid Book book, BindingResult result) {
 		if (result.hasErrors()) {
 			return "bookregister";
 		}
 		repository2.save(book);
-		return "bookregister";
-	}
-
-	@RequestMapping("/register")
-	public String register(Account account) {
-		return "register";
-	}
-	
-	@RequestMapping("/bookregister")
-	public String bookregister(Book book) {
 		return "bookregister";
 	}
 

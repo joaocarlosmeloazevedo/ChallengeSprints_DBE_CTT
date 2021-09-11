@@ -11,10 +11,10 @@
 	<hr>
 	<div class="start">
 		<ul id="menu">
-			<li><img th:src="doar.svg" id="menuimg"><a href="/donation">Doar livros</a></li>
+			<li><img th:src="doar.svg" id="menuimg"><a href="/donation">Livros</a></li>
 			<li><img th:src="retirar.svg" id="menuimg"><a href="/bookregister">Cadastrar Livros</a></li>
 			<li><img th:src="biblioteca.svg" id="menuimg"><a href="/library">Biblioteca</a></li>
-			<li><img th:src="user.svg" id="menuimg"><a href="/register">Cadastro</a></li>
+			<li><img th:src="user.svg" id="menuimg"><a href="/register">Cadastrar conta</a></li>
 		</ul>
 	</div>
 	
@@ -25,7 +25,7 @@
 		<ul th:each="user : ${user}" >
 			<li >
 				<img th:src="avatar.svg" id="menuimg">
-				<p th:text="${user.nome}" id="comms"></p>
+				<p th:text="${user.nome}"></p>
 			</li>
 		</ul>
 	
@@ -38,7 +38,7 @@
 		<ul th:each="book : ${book}" >
 			<li >
 				<img th:src="book.png" id="menuimg">
-				<p th:text="${book.titulo}" id="comms"></p>
+				<p th:text="${book.titulo}"></p>
 			</li>
 		</ul>
 	

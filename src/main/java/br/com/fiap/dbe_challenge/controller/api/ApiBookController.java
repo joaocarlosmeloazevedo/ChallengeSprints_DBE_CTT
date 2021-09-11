@@ -62,9 +62,9 @@ public class ApiBookController {
 	@DeleteMapping("{id}")
 	@CacheEvict(value = "books", allEntries = true)
 	public ResponseEntity<Book> delete(@PathVariable Long id) {
-		Optional<Book> account = repository.findById(id);
+		Optional<Book> book = repository.findById(id);
 
-		if (account.isEmpty())
+		if (book.isEmpty())
 			return ResponseEntity.notFound().build();
 
 		repository.deleteById(id);

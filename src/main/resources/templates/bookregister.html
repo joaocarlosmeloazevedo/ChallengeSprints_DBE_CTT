@@ -11,8 +11,8 @@
 	<hr>
  
 	<div class="info">
-		<h2>Cadastro</h2>
-		<p>Para cadastrar um novo usuário, insira as informações solicitadas para se registrar no sistema.</p>
+		<h2>Cadastrar Livros</h2>
+		<p>Para cadastrar um livro, insira as informações solicitadas para o registrar no sistema.</p>
 		
 		<form action="/bookregister" method="post" th:object="${book}">
 
@@ -28,7 +28,7 @@
 			<input name="valor" placeholder="Valor" th:field="*{valor}">
 			<h4 th:errors="*{valor}"></h4>
 			
-			<button>Cadastrar</button>
+			<button>Cadastrar Livro</button>
 
 		</form>
 	</div>
