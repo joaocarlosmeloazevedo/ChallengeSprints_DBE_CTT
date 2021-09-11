@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookify</title>
+<link th:href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+	<a href="/"><img th:src="bookify-logo.svg" id="indeximg"></a>
+	<hr>
+	<div class="biblioteca">
+		<h2>Biblioteca</h2>
+		<p id="subtext">Na biblioteca, você pode conferir todos os livros disponíveis em bookify!</p>
+		<ul th:each="book : ${book}">
+			<li><img th:src="book.png" id="librimg">
+
+				<p th:text="${book.titulo}" id="comms"></p>
+				<p th:text="${book.autor}" id="comms"></p>
+				<p th:text="${book.genero}" id="comms"></p>
+				<p id="comms2">R$</p>
+				<p th:text="${book.valor}" id="comms"></p>
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+<footer>
+	<p>Caramel Turn Trash</p>
+</footer>
+</html>
