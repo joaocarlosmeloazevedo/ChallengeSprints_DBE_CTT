@@ -83,7 +83,7 @@ O sistema Bookify, tem como finalidade o auxílio no cadastro e gestão de doaç
 ```bash
   git clone https://github.com/henriquesart/ChallengeSprints_DBE_CTT.git
 ```
-2 - Selecione o arquivo "EpictaskApplication.java" e rode como uma aplicação java.
+2 - Selecione o arquivo "DbeChallengeApplication.java" e rode como uma aplicação java.
 
 3 - Entre no projeto via navegador pelo endereço "http://localhost:8080/"
 
