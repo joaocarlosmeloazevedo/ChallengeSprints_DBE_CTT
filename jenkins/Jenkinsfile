@@ -13,6 +13,10 @@ pipeline{
         		echo 'Build finalizado.'
 	   		}
 		}
+		stage('Test'){
+		    echo 'Etapa de Teste iniciada'
+		    echo 'Sera concluida posteriormente...'
+		}	
 //    	stage('Deploy'){
  //   		steps{
  //   	    	echo 'Realizando Deploy...'
