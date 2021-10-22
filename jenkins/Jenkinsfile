@@ -14,8 +14,12 @@ pipeline{
 	   		}
 		}
 		stage('Test'){
-		    echo 'Etapa de Teste iniciada'
-		    echo 'Sera concluida posteriormente...'
+			steps{
+			    echo 'Etapa de Teste iniciada'
+		    	echo 'Sera concluida posteriormente...'
+			}
+
+		    
 		}	
 //    	stage('Deploy'){
  //   		steps{
