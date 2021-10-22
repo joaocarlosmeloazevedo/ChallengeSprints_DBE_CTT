@@ -21,21 +21,20 @@ pipeline{
 
 		    
 		}	
-//    	stage('Deploy'){
- //   		steps{
- //   	    	echo 'Realizando Deploy...'
- //   	    	
- //   			deploy adapters: [tomcat9(credentialsId: '964d2638-f808-4d6a-9ad3-c681d7e74d9e', path: '', url: 'http://localhost:8080')], contextPath: 'deploying-spring-boot-as-war-on-tomcat', onFailure: false, war: '**/*.war'
- //       		echo 'Deploy finalizado.'
- //   		}
-//		}
-//	}
+    	stage('Deploy'){
+   		steps{
+  	    	echo 'Realizando Deploy...'
+  	    	
+   			deploy adapters: [tomcat9(credentialsId: '964d2638-f808-4d6a-9ad3-c681d7e74d9e', path: '', url: 'http://localhost:8080')], contextPath: 'dbe_challenge-0.0.1-SNAPSHOT', onFailure: false, war: '**/*.war'
+       		echo 'Deploy finalizado.'
+   		}
+		}
+	}
 	
-//	post{
-//	    always{
-//	        cleanWs()
-//	    }
+	post{
+	    always{
+	        cleanWs()
+	    }
 
-//	}
-}
+	}
 }
